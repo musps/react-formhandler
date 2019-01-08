@@ -8,7 +8,11 @@
     "start": "webpack --watch",
     "build": "webpack --mode=production"
   },
-  "author": "",
+  "author": "Sercan YIDLIZ <sy@actu.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/musps/react-formhandler.git"
+  },
   "license": "ISC",
   "dependencies": {
     "joi": "^14.3.1",

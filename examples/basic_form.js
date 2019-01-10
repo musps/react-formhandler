@@ -73,8 +73,14 @@ function MyClass() {
             </select>
             <MyError error={errors.country} />
 
-            <button type='button' onClick={handleReset}>reset</button>
-            <button type='submit'>submit</button>
+            <button
+              type='button'
+              onClick={handleReset}>
+              reset
+            </button>
+            <button type='submit'>
+              submit
+            </button>
           </form>
         )
       }}

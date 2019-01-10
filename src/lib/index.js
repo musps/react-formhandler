@@ -1,6 +1,9 @@
 import React, { Fragment, Component } from 'react'
 import Joi, { cl, resetObjKeyValue, validateAll } from './helpers.js'
 
+/**
+ * @FormHandler
+ */
 class FormHandler extends Component {
   state = {
     values: {},
@@ -9,6 +12,11 @@ class FormHandler extends Component {
     validationSchema: {}
   }
 
+  /**
+   * @param {Object} props.values
+   * @param {Object<Joi>} props.validationSchema
+   * @param {Function(Boolean, Object)} props.onSubmit
+   */
   constructor(props) {
     super(props)
     this.state.values = {...props.initialValues}
@@ -48,9 +56,7 @@ class FormHandler extends Component {
   async handleSubmit(e) {
     e.preventDefault()
     const isSuccess = await this.validate(true)
-    if (isSuccess) {
-      this.props.onSubmit(this.state.values)
-    }
+    this.props.onSubmit(!isSuccess, this.state.values)
   }
 
   async validate(checkAllField = false) {
